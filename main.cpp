@@ -43,11 +43,13 @@ int main() {
     {
         double x = dist_w(mt); //Randomly generate x position
         double y = dist_h(mt); //Randomly generate y position
-        
-        corsim::Subject su(x,y,SUBJECT_RADIUS,false,new LockDownMovementStrategy(x,y));
+        //change ExitMovementStrategy for LockDownMovementStrategy for assignment A
+        corsim::Subject su(x,y,SUBJECT_RADIUS,false,new RegularMovementStrategy(x,y));
+        /* needed for assignment A
         if(i % 3 == 0){
             su.Strategy = new RegularMovementStrategy(x,y);
         }
+        */
         su.set_dx(dist_dx(mt));
         su.set_dy(dist_dy(mt));
 

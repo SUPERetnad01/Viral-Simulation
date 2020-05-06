@@ -41,9 +41,10 @@ class Subject
         void infect();
         double angle();
         double speed();
+        void tick();
         MovementStrategy* Strategy = new RegularMovementStrategy(0,0);
     private:
-        double _x = 0,_y = 0, _dx = 0, _dy = 0;
+        double _x = 0,_y = 0, _dx = 0, _dy = 0,_tick = 10,mod = 10;
         bool _infected = false;
         int _radius = 0;
 };

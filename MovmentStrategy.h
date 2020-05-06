@@ -22,6 +22,7 @@ class RegularMovementStrategy : public MovementStrategy {
 public:
     ~RegularMovementStrategy();
     RegularMovementStrategy(int x,int y) : _x(x),_y(y){};
+    RegularMovementStrategy(int x, int y, double dx , double dy) : _x(x),_y(y),_dx(dx),_dy(dy){};
     void set_x(double x);
     void set_y(double y);
     void set_dx(double dx);
@@ -48,6 +49,22 @@ public:
     double dy(){return _dy;};
 private:
     double _x = 0, _y = 0, _dx = 0, _dy = 0;
+};
+class ExitMovementStrategy : public MovementStrategy{
+public:
+    ~ExitMovementStrategy();
+    ExitMovementStrategy(int x,int y,double modifier) : _x(x),_y(y),_modifier(modifier){};
+    ExitMovementStrategy(int x, int y, double modifier , double dx , double dy) : _x(x),_y(y),_modifier(modifier),_dx(dx),_dy(dy){};
+    void set_x(double x);
+    void set_y(double y);
+    void set_dx(double dx);
+    void set_dy(double dy);
+    double x(){return _x;};
+    double y(){return _y;};
+    double dx(){return _dx;};
+    double dy(){return _dy;};
+private:
+    double _x = 0, _y = 0, _dx = 0, _dy = 0,_modifier = 0;
 };
 
 #endif //VIRAL_SIMULATION_MOVMENTSTRATEGY_H

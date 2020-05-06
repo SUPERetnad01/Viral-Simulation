@@ -15,6 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "subject.h"
+#include <iostream>
 #include <math.h>
 
 namespace corsim
@@ -83,6 +84,25 @@ double Subject::angle()
 double Subject::speed()
 {
     return sqrt(dx() * dx() + dy() * dy());
+}
+void Subject::tick(){
+    if(mod > 1){
+        if(_tick == 0){
+            this->Strategy = new ExitMovementStrategy(x(),y(),mod,dx(),dy());
+            mod--;
+            _tick = 100;
+        }else{
+            _tick--;
+        }
+    }else{
+        auto p = this->dx();
+        auto l = this->dy();
+        this->Strategy = new RegularMovementStrategy(x(),y(),dx(),dy());
+        this->set_dx(p);
+        this->set_dy(l);
+    }
+
+
 }
 
 }

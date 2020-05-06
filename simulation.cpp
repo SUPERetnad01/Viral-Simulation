@@ -78,13 +78,18 @@ void Simulation::tick()
 
     for(Subject& s : _subjects)
     {
+
         s.set_x(s.x() + s.dx() * dt);
         s.set_y(s.y() + s.dy() * dt);
+        
+        s.tick();
 
         if(s.infected())
         {
             numberInfected++;
         }
+
+
     }
 
     if(counter % 30 == 0)

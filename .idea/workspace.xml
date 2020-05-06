@@ -28,10 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d58cb3-a272-4fba-a623-e8e16ec7979c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MovmentStrategy.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovmentStrategy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovmentStrategy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MovmentStrategy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovmentStrategy.h" beforeDir="false" afterPath="$PROJECT_DIR$/MovmentStrategy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/subject.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/subject.h" afterDir="false" />
     </list>
@@ -79,7 +80,9 @@
       <workItem from="1588154151585" duration="9509000" />
       <workItem from="1588412566738" duration="4650000" />
       <workItem from="1588581132346" duration="12762000" />
-      <workItem from="1588662792739" duration="4429000" />
+      <workItem from="1588662792739" duration="9319000" />
+      <workItem from="1588688982052" duration="1670000" />
+      <workItem from="1588748486752" duration="1426000" />
     </task>
     <servers />
   </component>
