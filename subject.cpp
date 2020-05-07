@@ -88,18 +88,14 @@ double Subject::speed()
 void Subject::tick(){
     if(mod > 1){
         if(_tick == 0){
-            this->Strategy = new ExitMovementStrategy(x(),y(),mod,dx(),dy());
+            this->Strategy->set_mod(mod);
             mod--;
             _tick = 100;
         }else{
             _tick--;
         }
     }else{
-        auto p = this->dx();
-        auto l = this->dy();
         this->Strategy = new RegularMovementStrategy(x(),y(),dx(),dy());
-        this->set_dx(p);
-        this->set_dy(l);
     }
 
 

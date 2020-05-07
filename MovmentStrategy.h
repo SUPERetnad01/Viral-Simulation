@@ -12,6 +12,7 @@ class MovementStrategy {
         virtual void set_y(double y) = 0;
         virtual void set_dx(double dx) = 0;
         virtual void set_dy(double dy) = 0;
+        virtual void set_mod(double mod) = 0;
         virtual double x() = 0;
         virtual double y() = 0;
         virtual double dx() = 0;
@@ -27,6 +28,7 @@ public:
     void set_y(double y);
     void set_dx(double dx);
     void set_dy(double dy);
+    void set_mod(double mod);
     double x(){return _x;};
     double y(){return _y;};
     double dx(){return _dx;};
@@ -43,6 +45,7 @@ public:
     void set_y(double y);
     void set_dx(double dx);
     void set_dy(double dy);
+    void set_mod(double mod);
     double x(){return _x;};
     double y(){return _y;};
     double dx(){return _dx;};
@@ -59,6 +62,7 @@ public:
     void set_y(double y);
     void set_dx(double dx);
     void set_dy(double dy);
+    void set_mod(double mod);
     double x(){return _x;};
     double y(){return _y;};
     double dx(){return _dx;};

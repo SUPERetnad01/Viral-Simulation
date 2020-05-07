@@ -23,6 +23,7 @@
 
 //Constants to control the simulation
 const int SUBJECT_COUNT = 200;
+const int GROUP_COUNT = 10;
 const int SIM_WIDTH = 800;
 const int SIM_HEIGHT = 500;
 const int SUBJECT_RADIUS = 2;
@@ -39,27 +40,35 @@ int main() {
     std::uniform_real_distribution<double> dist_dx(-1.0, 1.0);
     std::uniform_real_distribution<double> dist_dy(-1.0, 1.0);
 
-    for (int i = 0; i<SUBJECT_COUNT; ++i)
+    for (int i = 0; i<GROUP_COUNT; ++i)
     {
         double x = dist_w(mt); //Randomly generate x position
         double y = dist_h(mt); //Randomly generate y position
+
         //change ExitMovementStrategy for LockDownMovementStrategy for assignment A
-        corsim::Subject su(x,y,SUBJECT_RADIUS,false,new RegularMovementStrategy(x,y));
+        //corsim::Subject su(x,y,SUBJECT_RADIUS,false,new LockDownMovementStrategy(x,y));
         /* needed for assignment A
         if(i % 3 == 0){
             su.Strategy = new RegularMovementStrategy(x,y);
         }
         */
-        su.set_dx(dist_dx(mt));
-        su.set_dy(dist_dy(mt));
+        for (int j = 0; j < (SUBJECT_COUNT / GROUP_COUNT ); ++j) {
+            x += j * 0.5;
+            y += j * 0.5;
+            corsim::Subject su(x,y,SUBJECT_RADIUS,false,new ExitMovementStrategy(x,y,10));
+            su.set_dx(dist_dx(mt));
+            su.set_dy(dist_dy(mt));
 
-        if(i == SUBJECT_COUNT-1)
-        {
-            su.infect();
+
+            if(i == 0 && j == 0)
+            {
+                std::cout << i << std::endl;
+                std::cout << j << std::endl;
+                su.infect();
+            }
+
+            s.add_subject(std::move(su));
         }
-
-        s.add_subject(std::move(su));
-    }  
-
+    }
     s.run();
 }

@@ -27,7 +27,7 @@ class Subject
 {
     public:
         Subject(int x, int y, int radius, bool infected,MovementStrategy *Strategy) :
-        Strategy(Strategy), _x(x), _y(y), _infected(infected), _radius(radius) {};;
+        Strategy(Strategy), _x(x), _y(y), _infected(infected), _radius(radius) {};
         double x();
         double y();
         void set_x(double x);
